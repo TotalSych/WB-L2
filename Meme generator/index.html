@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Генератор мемов</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <h1>Создайте свой мем</h1>
+      <div class="top-text-container">
+        <textarea
+          placeholder="Верхний текст"
+          id="top-text"
+          class="text-container"
+        ></textarea>
+        Размер текста:
+        <input
+          class="range"
+          type="range"
+          id="top-text-size-input"
+          min="0.05"
+          max="0.25"
+          value="0.15"
+          step="0.01"
+        />
+      </div>
+      <div class="bottom-text-container">
+        <textarea
+          placeholder="Нижний текст"
+          id="bottom-text"
+          class="text-container"
+        ></textarea>
+        Размер текста:
+        <input
+          class="range"
+          type="range"
+          id="bottom-text-size-input"
+          min="0.05"
+          max="0.25"
+          value="0.15"
+          step="0.01"
+        />
+      </div>
+      <div class="buttons-container">
+        <div>
+          <input type="file" id="image-input" accept="image/*" />
+        </div>
+        <div>
+          <button class="generate-btn" id="generate-btn">Создать</button>
+        </div>
+      </div>
+      <canvas id="meme-canvas" title="Right click to save this meme"></canvas>
+      <button id="download" class="download-btn">Скачать изображение</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

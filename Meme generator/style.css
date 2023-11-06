@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 30px;
+  color: #640680a9;
+  padding: 10px;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fff1cca8, #6406804b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 20px;
+  box-shadow: 8px 8px 8px #00000015;
+  width: 500px;
+}
+
+.top-text-container,
+.bottom-text-container {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  width: 100%;
+}
+
+.text-container {
+  height: 20px;
+}
+
+.generate-btn {
+  padding: 1px 6px;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  width: 100%;
+}
+
+.download-btn {
+  display: none;
+  padding: 1px 6px;
+  margin: 10px;
+}
+
+p {
+  font-family: "sans-serif";
+}
+
+#meme-canvas {
+  width: 300px;
+}

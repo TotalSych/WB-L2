@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Угадай число</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="game" id="game">
+        <h3>
+          Попробуйте угадать число от 1 до
+          <input
+            id="number-max"
+            type="number"
+            placeholder="01"
+            min="1"
+            max="1000"
+          />
+        </h3>
+        <div class="input-wrapper">
+          <input type="number" placeholder="00" class="guess" id="guess" />
+          <button id="check-btn">Угадать</button>
+        </div>
+        <span id="number-of-guesses">Количество попыток: 0</span>
+        <span id="guessed-numbers">Неправильные попытки: Нет</span>
+      </div>
+      <button class="restart" id="restart">Заново</button>
+      <div class="result">
+        <dir id="hint"></dir>
+        <dir id="hintEven"></dir>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
