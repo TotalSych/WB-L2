@@ -1,0 +1,27 @@
+#array-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bar {
+  width: 20px;
+  margin: 0 1px;
+  background-color: #2196f3;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+}
+
+#sorting-type {
+  text-align: center;
+  margin-top: 20px;
+}

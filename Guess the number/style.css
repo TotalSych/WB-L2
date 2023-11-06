@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
 }
 
 html,
@@ -27,8 +27,13 @@ body {
   text-align: center;
 }
 
+.start {
+  margin: 0 auto;
+  padding: 8px 16px;
+}
+
 .game {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 

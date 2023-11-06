@@ -16,22 +16,26 @@
   <body>
     <div class="container">
       <div class="game" id="game">
-        <h3>
-          Попробуйте угадать число от 1 до
-          <input
-            id="number-max"
-            type="number"
-            placeholder="01"
-            min="1"
-            max="1000"
-          />
-        </h3>
+        <h3 id="game-title"></h3>
         <div class="input-wrapper">
           <input type="number" placeholder="00" class="guess" id="guess" />
           <button id="check-btn">Угадать</button>
         </div>
         <span id="number-of-guesses">Количество попыток: 0</span>
         <span id="guessed-numbers">Неправильные попытки: Нет</span>
+      </div>
+      <div id="start-screen">
+        <h3>
+          Укажите диапазон чисел: от 1 до
+          <input
+            id="number-max"
+            type="number"
+            placeholder="0"
+            min="1"
+            max="1000"
+          />
+        </h3>
+        <button class="start" id="start">Начать игру!</button>
       </div>
       <button class="restart" id="restart">Заново</button>
       <div class="result">

@@ -1,26 +1,66 @@
-// Создаем переменные для подсказки, количества попыток, чисел которые не подошли, кнопок, контейнера с игрой и поля ввода попыток
+// Переменная для подсказки
 const hint = document.getElementById("hint");
+// Переменная для второй подсказки, четное ли число
 const hintEven = document.getElementById("hintEven");
+// Переменная для количества попыток
 const numberOfGuessesRef = document.getElementById("number-of-guesses");
+// Переменная для неправильных попыток
 const guessedNumbersRef = document.getElementById("guessed-numbers");
+// Переменная для кнопки "заново"
 const restartButton = document.getElementById("restart");
+// Переменная для поля игры
 const game = document.getElementById("game");
+// Переменная для поля воода попытки
 const guessInput = document.getElementById("guess");
+// Переменная для кнопки "угадать"
 const checkButton = document.getElementById("check-btn");
-const numberMax = document.getElementById("number-max");
+// Переменная для начального экрана с выбором максимального числа
+const startScreen = document.getElementById("start-screen");
+// Переменная для кнопки "начать игру"
+const startButton = document.getElementById("start");
+// Переменная для текста игры
+const gameTitle = document.getElementById("game-title");
+// Переменная для максимального числа
+const numberMaxRef = document.getElementById("number-max");
 
+// Переменная для ответа
 let answer;
+// Переменная для количества попыток
 let numberOfGuesses;
+// Переменная для масива с неправильными попытками
 let guessedNumbersArr;
+// Переменная для максимального числа
+let numberMax;
+
+// Функция для генерации случайного числа от 1 до указанного значения
+const generateNumber = () => {
+  answer = Math.floor(Math.random() * numberMax) + 1;
+  console.log(answer);
+};
+
+// Функция для начала игры
+startButton.addEventListener("click", () => {
+  // даем значение переменной для максимального числа
+  numberMax = numberMaxRef.value;
+  // Создаем случайное число
+  generateNumber();
+  // Скрываем начальный экран
+  startScreen.style.display = "none";
+  // Показываем экран игры
+  game.style.display = "grid";
+  // Добавляем текст с правилами игры
+  gameTitle.innerHTML = `Угадайте число от 1 до ${numberMax}`;
+});
 
 // Создаем стрелочную функцию для кнопки "угадать", которая будет сравнивать число игрока и загаданное число
 const play = () => {
   // Переменная для числа игрока
   const userGuess = guessInput.value;
+  console.log(userGuess);
   // Добавляем проверку являются ли полученные данные числом и равно ли оно одному из чисел от 1 до 100
-  if (userGuess < 0 || userGuess > 100 || isNaN(userGuess)) {
+  if (userGuess < 0 || userGuess > numberMax.value || isNaN(userGuess)) {
     // Если одно из условий нарушается, возвращаем и показываем сообщение
-    alert("Введите число от 1 до 100");
+    alert(`Введите число от 1 до ${numberMax}`);
     return;
   }
   // Если полученное число подходит, добавляем его в массив попыток и добавляем 1 к количеству попыток
@@ -68,8 +108,6 @@ const play = () => {
 
 // Создаем функцию которая создаст случайное число и напишет правильный ответ, обнулит количество попыток, массив неправильных попыток, значение в поле воода и уберет у подсказки классы ошибки и победы
 const init = () => {
-  answer = Math.floor(Math.random() * 100) + 1;
-  console.log(answer);
   numberOfGuesses = 0;
   guessedNumbersArr = [];
   guessInput.value = "";
@@ -87,8 +125,8 @@ guessInput.addEventListener("keydown", (e) => {
 
 // Добавляем функционал кнопке рестарт по клику
 restartButton.addEventListener("click", () => {
-  // Возвращаем видимость полю игры
-  game.style.display = "grid";
+  // Возвращаем видимость полю выбора числа
+  startScreen.style.display = "block";
   // Убираем видимость кнопки рестарт
   restartButton.style.display = "none";
   // убираем подсказку
